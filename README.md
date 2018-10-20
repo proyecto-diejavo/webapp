@@ -66,3 +66,5 @@ Agregamos el comando al tag scripts
 ```
 
 [https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/](https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/)
+
+[https://proyecto-diejavo.firebaseio.com/usuarios.json](https://proyecto-diejavo.firebaseio.com/usuarios.json)
