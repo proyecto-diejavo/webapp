@@ -30,3 +30,42 @@
     transform: rotate(360deg);
   }
 }
+
+input[type=email] {
+  width: 250px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password] {
+  width: 250px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+label{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.ImageLogin
+{
+  border-radius: 150px;
+  height: 120px;
+  width: 120px;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.Content{
+  background-image: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
