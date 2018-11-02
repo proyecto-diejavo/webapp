@@ -1,0 +1,20 @@
+@import './variables';
+
+@function strip-units($number) {
+  @return ($number / ($number * 0 + 1));
+}
+
+@function to-rem($des, $base: $font-size-root) {
+  @if not unitless($des) {
+    $des: strip-units($des);
+  }
+  $base: strip-units($base);
+  @return ($des / $base) * 1rem;
+}
+
+@mixin rem($dest: 16, $prop: "font-size") {
+  @if not unitless($dest) {
+    $dest: strip-units($dest);
+  }
+  #{$prop}: to-rem($dest);
+}

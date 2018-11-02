@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import * as firebase from 'firebase'
+import Button from './components/button/Button';
+import Tabs from './components/tab/Tabs';
+import Tab from './components/tab/Tab';
+import * as firebase from 'firebase';
 
 
 const config = {
@@ -43,6 +46,19 @@ class App extends Component {
           >
             <h1>{this.state.name}</h1>
           </a>
+          <Button
+            buttonLabel={'hi'}
+            disabled={false}
+            name="continue"
+          />
+           <Tabs>
+              <Tab tabName={'tab1'}>
+                <p>tab 1</p>
+              </Tab>
+              <Tab tabName={'tab2'}>
+                <p>tab 2</p>
+              </Tab>
+            </Tabs>
         </header>
       </div>
     );
