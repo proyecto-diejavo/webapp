@@ -1,0 +1,94 @@
+@import '../../assets/sass/_styles';
+
+*{
+  -webkit-font-smoothing: antialiased;
+} 
+
+.Base {
+  max-width: 100%;
+  font-weight: bold;
+  font-family: $font-family-base;
+  text-align: center;
+  position: relative;
+  color: $backgroundLight;
+  background-color: $lineBorder;
+  height: 3rem;
+  width: 16rem;
+  @include rem(14);
+  letter-spacing: 0.03rem;
+  border-radius: 5.62rem;
+  margin:0 auto;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: width 1s;
+  &:active {
+    opacity: 0.8
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+/* .Kind */
+
+.purple {
+  background-color: $purple;
+}
+
+.white {
+  background-color: $backgroundLight;
+  color: $purple;
+}
+
+.greenOk {
+  background-color: $greenOk;
+}
+
+.transparent {
+  background-color: transparent;
+  border: solid 1px $purple;
+  color:$purple;
+}
+
+/* .Disabled */
+.Disabled {
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+  color: $backgroundLight;
+  background: #48535b;
+  opacity: 0.4;
+
+  width:16rem;
+  height: 3rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  letter-spacing: 0.03rem;
+  border-radius: 5.62rem;
+  margin:0 auto;
+
+}
+
+.loading {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.loader {
+  animation: spinner 1100ms infinite linear;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

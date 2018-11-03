@@ -1,0 +1,15 @@
+@mixin title-black-center {
+	font-family: FelbridgePro;
+	font-size: 24px;
+	line-height: 32.0px;
+	text-align: center;
+	color: $blackText;
+}
+@mixin paragraph-black-center {
+	font-family: FelbridgePro;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 20.0px;
+	text-align: center;
+	color: $grayParagraph;
+}
