@@ -8,12 +8,12 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: #0F2027; /* fallback for old browsers */
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /*justify-content: center;*/
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -29,4 +29,90 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.HeaderApp{
+  height: 50px;
+    background-color: #203A43;
+    width: 100%;
+}
+
+.FootherApp{
+  height: 50px;
+  background-color: #203A43;
+  width: 100%;
+}
+
+.TitleHeader{
+  color: white;
+  font-size:30px;
+  line-height:50px;
+  text-transform: uppercase;
+}
+
+.Cuenta{
+  margin-top:40px;
+  margin-bottom:40px;
+  width:90%;
+}
+
+.DetalleCuenta{
+  border-bottom: #203A43 1px solid;
+  width: 100%;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.CuentaProducto{
+  color: white;
+  width: 60%;
+  font-size:15px;
+  text-transform: uppercase;
+}
+
+.CuentaValor{
+  color: white;
+  width: 40%;
+  font-size:18px;
+  text-transform: uppercase;
+  line-height:40px;
+  text-align:right;
+  color:white;
+}
+
+.ProductoNeto{
+  text-align:left;
+}
+
+.ProductoValorNeto{
+  text-align:left;
+}
+
+.DetailPago{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  text-align:right;
+}
+
+.TotalVl{
+  display: flex;
+}
+
+.TotalVl1{
+  width: 60%;
+  text-align: left;
+  line-height: 35px;
+  padding-left: 10px;
+}
+
+.TotalVl2{
+  width: 40%;
+  color:white;
+}
+
+.DetRecuadro{
+  border:#0F2027 2px solid;
+  border-radius: 5px;
+  padding:5px;
 }

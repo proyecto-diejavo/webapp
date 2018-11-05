@@ -40,7 +40,74 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       {this.state.user ? (<AdminHome />) : (<Login/>)}
+      <div className='HeaderApp'>
+        <div className='TitleHeader'>cuenta</div>
+      </div> 
+        <header className="App-header">
+        <div className='Cuenta'>
+            <div className='DetalleCuenta'>
+              <div className='CuentaProducto'>              
+                <div className='ProductoNeto'>Cerveza Corona</div>
+                <div className='ProductoValorNeto'>$12.000 X 3</div>
+              </div>
+              <div className='CuentaValor'>$36.000</div>
+            </div>
+
+            <div className='DetalleCuenta'>
+              <div className='CuentaProducto'>
+                <div className='ProductoNeto'>Ron Caldas</div>
+                <div className='ProductoValorNeto'>$125.000 X 2</div>
+              </div>
+              <div className='CuentaValor'>$250.000</div>
+            </div>
+
+            <div className='DetalleCuenta'>
+              <div className='CuentaProducto'>
+                <div className='ProductoNeto'>Aguardiente Antioqueño</div>
+                <div className='ProductoValorNeto'>$120.000 X 1</div>
+              </div>
+              
+              <div className='CuentaValor'>$120.000</div>
+            </div>
+
+            <div className='DetalleCuenta'>
+              <div className='CuentaProducto'>
+                <div className='ProductoNeto'>Tequila Don Juan</div>
+                <div className='ProductoValorNeto'>$350.000 X 2</div>
+              </div>
+              <div className='CuentaValor'>$700.000</div>
+            </div>
+
+            <div className='DetailPago'>
+              <div className='TotalVl'>
+                <div className='TotalVl1'>Servicio</div>
+                <div className='TotalVl2 DetRecuadro'>$9.000</div>
+              </div>
+              <div className='TotalVl'>
+                <div className='TotalVl1'>SubTotal</div>
+                <div className='TotalVl2'>$90.000</div>
+              </div>
+              <div className='TotalVl'>
+                <div className='TotalVl1'>Iva</div>
+                <div className='TotalVl2'>$900.000</div>
+              </div>
+              <div className='TotalVl'>
+                <div className='TotalVl1'>Total</div>
+                <div className='TotalVl2'>$9.000.000</div>
+              </div>
+            </div>
+          </div>
+
+            <Button
+              color={'white'}
+              buttonLabel={'hi'}
+              disabled={false}
+              name="Cerrar"
+            />
+            
+            <br></br>
+        </header>
+        <div className='FootherApp'></div>
       </div>
     );
   }
