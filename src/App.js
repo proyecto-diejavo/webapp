@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import fire from './Config/Fire'
-import Login from './Login';
-import Home from './Home';
+import fire from 'config/Fire'
+import { Login, AdminHome } from 'views';
 
 /*const nameRef = fire.database().ref().child('object').child('name');*/
 
@@ -27,6 +26,7 @@ class App extends Component {
 
   authListener(){
     fire.auth().onAuthStateChanged((user) =>{
+      console.log(user);
       if (user){
         this.setState({user});
         localStorage.setItem('user', user.uid);
@@ -40,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       {this.state.user ? (<Home />) : (<Login/>)}
+       {this.state.user ? (<AdminHome />) : (<Login/>)}
       </div>
     );
   }

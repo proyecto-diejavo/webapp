@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import fire from './Config/Fire';
-import './App.css';
+import fire from 'config/Fire';
 
 class Login extends Component {
   constructor(props) {
@@ -41,10 +40,6 @@ class Login extends Component {
           <h1>
             Login
           </h1>
-
-          <div className="ImageLogin">
-
-          </div>
 
           <div>
             <label>Correo</label>

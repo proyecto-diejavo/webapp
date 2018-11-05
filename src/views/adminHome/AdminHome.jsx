@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
-import fire from './Config/Fire';
+import fire from 'config/Fire';
+import {dataBaseChild, dataRequest} from 'services/firebase'
 
-class Home extends Component {
+const dataBase = dataBaseChild("zonas");
 
-    constructor(props) {
-        super(props);
-        this.logout = this.logout.bind(this);
-        this.state = { 
-            zonas: [] 
-        }
-        this.db = fire.database().ref().child('zonas');
-        
+class AdminHome extends Component {
+
+    state = { 
+        zonas: [] 
     }
-
+    
     componentDidMount() {
         const { zonas } = this.state;
-        this.db.on('child_added', snap => {
+        dataBase.on('child_added', snap => {
             zonas.push({
                 Id:snap.key,
                 activa:snap.val().activa,
@@ -25,7 +22,7 @@ class Home extends Component {
             this.setState({zonas});
         });
 
-        this.db.on('child_removed', snap => {
+        dataBase.on('child_removed', snap => {
             for (let i = 0; i < zonas.length; i++) {
               if(zonas[i].Id === snap.key){
                 zonas.splice(i,1);
@@ -34,7 +31,7 @@ class Home extends Component {
             this.setState({zonas});
         });
 
-        this.db.on('child_changed', snap => {
+        dataBase.on('child_changed', snap => {
             for (let i = 0; i < zonas.length; i++) {
                 if (zonas[i].Id === snap.key) {
                     zonas[i].activa=snap.val().activa;
@@ -46,26 +43,25 @@ class Home extends Component {
         })
     };
 
+    request = (action, id, data) => (
+        dataRequest("zonas", action, id, data)
+    );
       
     logout() {
         fire.auth().signOut();
     }
 
     DeleteZona(id){
-        this.db.child(id).remove();
+        this.request("delete", id)
     }
 
     UpdateZona(id){
-        this.db.child(id).update({descripcion: "Test Jr"})
+        this.request("update", id, {descripcion: "Test Jr"})
     }
 
     postZone(){
-        let {zonas} = this.state;
-        /*zonas.push({
-              Id: zonas.length + 1,
-              descripcion: this.NameZone.value
-        });*/
-        this.db.push().set({activa:true, descripcion: this.NameZone.value, numero:zonas.length + 1})
+        let {zonas} = this.state;        
+        this.request("create", (zonas.length + 1), {activa:true, descripcion: this.NameZone.value, numero:zonas.length + 1})
         this.NameZone.value = '';
         this.NameZone.focus();
     }
@@ -139,4 +135,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default AdminHome;
