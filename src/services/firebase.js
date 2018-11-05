@@ -1,6 +1,6 @@
-import FireBaseService from './firebase.services'
+import DataBaseService from 'services/dataBase.services'
 
-const dataBaseService = new FireBaseService();
+const dataBaseService = new DataBaseService();
 
 export const dataBaseChild = child => (dataBaseService.get(child));
 export const dataRequest = (child, type, id, data = "") => {

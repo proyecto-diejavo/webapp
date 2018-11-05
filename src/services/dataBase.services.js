@@ -2,7 +2,7 @@ import fire from 'config/Fire';
 
 const dataBase = fire.database().ref();
 
-export default class FireBaseService {
+export default class DataBaseService {
   // Services
     get = child => (dataBase.child(child))
 

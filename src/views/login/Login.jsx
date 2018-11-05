@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import fire from 'config/Fire';
+import {signIn, createUser} from 'services/authentication.services';
+
 
 class Login extends Component {
   constructor(props) {
@@ -7,11 +8,8 @@ class Login extends Component {
     this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.signup = this.signup.bind(this);
-    this.state = {
-      email: '',
-      password: ''
-    };
   }
+  state = { email: '', password: '' };
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
@@ -19,19 +17,14 @@ class Login extends Component {
 
   login(e) {
     e.preventDefault();
-    fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-    }).catch((error) => {
-        console.log(error);
-      });
+    const {email, password} = this.state;
+    signIn(email, password);
   }
 
   signup(e){
     e.preventDefault();
-    fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-    }).then((u)=>{console.log(u)})
-    .catch((error) => {
-        console.log(error);
-      })
+    const {email, password} = this.state;
+    createUser(email, password);
   }
   render() {
     return (

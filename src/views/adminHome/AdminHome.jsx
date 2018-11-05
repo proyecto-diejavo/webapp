@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import fire from 'config/Fire';
-import {dataBaseChild, dataRequest} from 'services/firebase'
+import {dataBaseChild, dataRequest} from 'services/firebase';
+import {signOut} from 'services/authentication.services';
 
 const dataBase = dataBaseChild("zonas");
 
 class AdminHome extends Component {
 
-    state = { 
-        zonas: [] 
-    }
+    state = { zonas: [] }
     
     componentDidMount() {
         const { zonas } = this.state;
@@ -48,11 +46,7 @@ class AdminHome extends Component {
     );
       
     logout() {
-        fire.auth().signOut();
-    }
-
-    DeleteZona(id){
-        this.request("delete", id)
+        signOut();
     }
 
     UpdateZona(id){
@@ -120,7 +114,7 @@ class AdminHome extends Component {
                                         </td>
                                         <td>
                                             <label
-                                            onClick={() => this.DeleteZona(zona.Id)}
+                                            onClick={() => this.request("delete", zona.Id)}
                                             >&times;
                                             </label>
                                         </td>                               
