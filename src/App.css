@@ -9,7 +9,7 @@
 
 .App-header {
   background: #0F2027; /* fallback for old browsers */
-  min-height: 85vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
