@@ -1,0 +1,39 @@
+@import '../../assets/sass/_styles';
+
+.LoginContent{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.ContentLeft{
+    background-color: #203A43;
+    width: 70%;
+}
+
+.ContentRigth{
+    width: 30%;
+    padding-top: to-rem(120);
+    margin: 0 auto;
+    text-align: center;
+    background: #0f2027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #0f2027, #203a43, #2c5364); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
+    
+}
+
+.ImageUser{
+    height: to-rem(50);
+}
+
+@media only screen and (max-width: 600px) {
+    .ContentLeft{
+        display: none;       
+    }
+    
+    .ContentRigth{
+        background-color: #203A43;
+        width: 100vw;
+    }   
+}

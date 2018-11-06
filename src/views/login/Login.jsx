@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {signIn, createUser} from 'services/authentication.services';
-
+import { user } from 'assets/images';
+import './Login.scss'
 
 class Login extends Component {
   constructor(props) {
@@ -30,22 +31,39 @@ class Login extends Component {
     return (
       <div>
         <form>
-          <h1>
-            Login
-          </h1>
+          <div className='LoginContent'>
+            <div className='ContentLeft'>
 
-          <div>
-            <label>Correo</label>
-            <br></br>
-            <input value={this.state.email} onChange={this.handleChange} type="email" name="email"  placeholder="Correo" />
+            </div>
+            <div className='ContentRigth'>
+              <div>
+                <div>
+                  <img alt='' className='ImageUser' src={user} />
+                </div>
+                <div>
+                  <label>Correo</label>
+                </div>
+                <div>
+                  <input value={this.state.email} onChange={this.handleChange} type="email" name="email"  placeholder="Correo" />
+                </div>
+              </div>
+              <div>
+                <div>
+                  <label>Contraseña</label>
+                </div>
+                <div>
+                  <input value={this.state.password} onChange={this.handleChange} type="password" name="password" placeholder="Contraseña" />
+                  </div>
+              </div>
+              <div>
+                <div>                  
+                  <button type="submit" onClick={this.login}>Iniciar Sesión</button>
+                
+                  <button onClick={this.signup} style={{marginLeft: '25px'}}>Registrar</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>
-            <label>Contraseña</label>
-            <br></br>
-            <input value={this.state.password} onChange={this.handleChange} type="password" name="password" placeholder="Contraseña" />
-          </div>
-            <button type="submit" onClick={this.login}>Iniciar Sesión</button>
-            <button onClick={this.signup} style={{marginLeft: '25px'}}>Registrar</button>
         </form> 
       </div>
     );
